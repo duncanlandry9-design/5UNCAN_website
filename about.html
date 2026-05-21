@@ -1,86 +1,206 @@
-<!-- ========================= -->
-<!-- about.html -->
-<!-- ========================= -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>about</title>
-
+<title>5UNCAN — about</title>
+<link rel="stylesheet" href="style.css">
 <style>
+.col-wrap { display: flex; gap: 10px; align-items: flex-start; }
+.col-left  { flex: 1 1 auto; display: flex; flex-direction: column; gap: 10px; }
+.col-right { width: 200px;   display: flex; flex-direction: column; gap: 10px; }
 
-body{
-    background:#f3f3ff;
-    font-family:Tahoma;
-    font-size:12px;
-    background-image:url("https://www.transparenttextures.com/patterns/stardust.png");
+.nav-list { list-style: none; }
+.nav-list li { border-bottom: 1px solid var(--dk-gray); }
+.nav-list li:last-child { border-bottom: none; }
+.nav-list a {
+  display: block; padding: 4px 6px;
+  font-family: 'VT323', monospace; font-size: 20px;
+  color: var(--blue); text-decoration: none; letter-spacing: 1px;
+}
+.nav-list a:hover { background: var(--win-title); color: var(--white); }
+.nav-list a::before { content: '▶ '; font-size: 10px; }
+.nav-list a.active { color: var(--pink); }
+
+.page-banner {
+  background: var(--black); padding: 10px; text-align: center;
+}
+.page-banner-title {
+  font-family: 'VT323', monospace; font-size: 42px; color: var(--pink);
+  letter-spacing: 4px; text-shadow: 2px 2px 0 #880044;
 }
 
-#wrap{
-    width:760px;
-    margin:auto;
-    margin-top:20px;
+/* About card layout */
+.about-body {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--black);
+}
+.about-body p { margin-bottom: 10px; }
+.about-body .hi {
+  font-family: 'VT323', monospace;
+  font-size: 32px;
+  color: var(--pink);
+  display: block;
+  margin-bottom: 6px;
 }
 
-.box{
-    background:white;
-    border:1px solid #999;
-    padding:10px;
+/* Currently listening */
+.listening-list {
+  list-style: none;
+  margin-top: 4px;
 }
-
-.heading{
-    font-size:16px;
-    font-weight:bold;
-    color:#ff55aa;
+.listening-list li {
+  padding: 5px 4px;
+  border-bottom: 1px dotted var(--dk-gray);
+  font-family: 'VT323', monospace;
+  font-size: 20px;
+  color: var(--black);
 }
+.listening-list li:last-child { border-bottom: none; }
+.listening-list li::before { content: '♪ '; color: var(--pink); }
 
-a{
-    color:#3366cc;
+/* Inspiration list */
+.inspo-list { list-style: none; }
+.inspo-list li {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 11px;
+  padding: 3px 0;
+  border-bottom: 1px dotted var(--dk-gray);
+  color: var(--dk-gray);
 }
-
+.inspo-list li:last-child { border-bottom: none; }
+.inspo-list li::before { content: '> '; color: var(--blue); }
 </style>
 </head>
-
 <body>
 
-<div id="wrap">
-
-<div class="box">
-
-<a href="index.html">< back</a>
-
-<div class="heading">
-about
+<div class="marquee-bar">
+  <span class="marquee-inner">
+    ★ 5UNCAN / ABOUT ★ || hi i'm duncan || i study music and code things sometimes || trance . breakcore . ambient . hyperpop || ★ 5UNCAN ONLINE ★
+  </span>
 </div>
 
-<p>
-hi i'm duncan.
-</p>
+<div class="desktop">
+  <div class="col-wrap">
 
-<p>
-i study music and code things sometimes.
-</p>
+    <div class="col-left">
 
-<p>
-this site is inspired by old personal websites,
-blogs, and early 2000s electronic music pages.
-</p>
+      <div class="win">
+        <div class="win-titlebar">
+          <span class="win-title-txt">ABOUT.EXE — who is 5UNCAN</span>
+          <div class="win-btns">
+            <div class="win-btn">_</div><div class="win-btn">□</div><div class="win-btn">✕</div>
+          </div>
+        </div>
+        <div class="page-banner">
+          <div class="page-banner-title">ABOUT</div>
+        </div>
+      </div>
 
-<p>
-currently listening to:
-</p>
+      <div class="win">
+        <div class="win-titlebar">
+          <span class="win-title-txt">README — duncan.txt</span>
+          <div class="win-btns">
+            <div class="win-btn">_</div><div class="win-btn">□</div><div class="win-btn">✕</div>
+          </div>
+        </div>
+        <div class="win-body">
+          <div class="about-body">
+            <span class="hi">hi i'm duncan.</span>
+            <p>
+              i study music and code things sometimes.
+            </p>
+            <p>
+              this site is inspired by old personal websites, blogs, and early 2000s electronic music pages.
+            </p>
+          </div>
+        </div>
+      </div>
 
-<ul>
-<li>trance</li>
-<li>breakcore</li>
-<li>ambient</li>
-<li>hyperpop</li>
-</ul>
+      <div class="win">
+        <div class="win-titlebar">
+          <span class="win-title-txt">CURRENTLY LISTENING</span>
+          <div class="win-btns"><div class="win-btn">✕</div></div>
+        </div>
+        <div class="win-body">
+          <div class="sec-heading">♪ GENRES</div>
+          <ul class="listening-list">
+            <li>trance</li>
+            <li>breakcore</li>
+            <li>ambient</li>
+            <li>hyperpop</li>
+          </ul>
+        </div>
+      </div>
 
+      <div class="win">
+        <div class="win-titlebar">
+          <span class="win-title-txt">INSPIRATION.TXT</span>
+          <div class="win-btns"><div class="win-btn">✕</div></div>
+        </div>
+        <div class="win-body">
+          <div class="sec-heading">📁 INFLUENCES</div>
+          <ul class="inspo-list">
+            <li>old personal websites</li>
+            <li>blogs from the early 2000s</li>
+            <li>early electronic music pages</li>
+            <li>ninajirachi / girledm.com</li>
+            <li>neocities community</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-right">
+      <div class="win">
+        <div class="win-titlebar">
+          <span class="win-title-txt">NAVIGATE</span>
+          <div class="win-btns"><div class="win-btn">✕</div></div>
+        </div>
+        <div class="win-body" style="padding:4px;">
+          <ul class="nav-list">
+            <li><a href="index.html">home</a></li>
+            <li><a href="music.html">music</a></li>
+            <li><a href="mixing.html">mixing</a></li>
+            <li><a href="code.html">code</a></li>
+            <li><a href="about.html" class="active">about</a></li>
+            <li><a href="log.html">log</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="win">
+        <div class="win-titlebar">
+          <span class="win-title-txt">LINKS</span>
+          <div class="win-btns"><div class="win-btn">✕</div></div>
+        </div>
+        <div class="win-body" style="padding:4px;">
+          <ul class="nav-list" style="font-size:17px;">
+            <li><a href="https://soundcloud.com/5uncan" target="_blank">soundcloud</a></li>
+            <li><a href="https://github.com/duncanlandry9-design" target="_blank">github</a></li>
+            <li><a href="https://www.youtube.com/@SwagAssBaller420" target="_blank">youtube</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="site-footer">5uncan.neocities.org</div>
 </div>
 
+<div class="taskbar">
+  <div class="taskbar-start">⊞ START</div>
+  <div class="taskbar-sep"></div>
+  <div class="taskbar-items">
+    <div class="taskbar-item">👤 ABOUT.EXE</div>
+  </div>
+  <div class="taskbar-clock" id="clock">00:00</div>
 </div>
-
+<script>
+function tick(){const n=new Date();document.getElementById('clock').textContent=String(n.getHours()).padStart(2,'0')+':'+String(n.getMinutes()).padStart(2,'0');}
+tick();setInterval(tick,10000);
+</script>
 </body>
 </html>

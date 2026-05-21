@@ -1,153 +1,234 @@
-<!-- ========================= -->
-<!-- music.html -->
-<!-- ========================= -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>music</title>
-
+<title>5UNCAN — music</title>
+<link rel="stylesheet" href="style.css">
 <style>
+.col-wrap { display: flex; gap: 10px; align-items: flex-start; }
+.col-left  { flex: 1 1 auto; display: flex; flex-direction: column; gap: 10px; }
+.col-right { width: 200px;   display: flex; flex-direction: column; gap: 10px; }
 
-body{
-    background:#f3f3ff;
-    font-family:Tahoma;
-    font-size:12px;
-    color:#222;
-    background-image:url("https://www.transparenttextures.com/patterns/stardust.png");
+/* Nav (shared right-col pattern) */
+.nav-list { list-style: none; }
+.nav-list li { border-bottom: 1px solid var(--dk-gray); }
+.nav-list li:last-child { border-bottom: none; }
+.nav-list a {
+  display: block; padding: 4px 6px;
+  font-family: 'VT323', monospace; font-size: 20px;
+  color: var(--blue); text-decoration: none; letter-spacing: 1px;
+}
+.nav-list a:hover { background: var(--win-title); color: var(--white); }
+.nav-list a::before { content: '▶ '; font-size: 10px; }
+.nav-list a.active { color: var(--pink); }
+
+/* Track cards */
+.track-card {
+  border-bottom: 1px dotted var(--dk-gray);
+  padding: 10px 0;
+}
+.track-card:last-child { border-bottom: none; }
+
+.track-name {
+  font-family: 'VT323', monospace;
+  font-size: 22px;
+  color: var(--pink);
+  letter-spacing: 1px;
+  margin-bottom: 4px;
 }
 
-#wrap{
-    width:760px;
-    margin:auto;
-    margin-top:20px;
+audio {
+  width: 100%;
+  height: 28px;
+  outline: none;
+  border: 1px inset var(--dk-gray);
+  background: var(--black);
 }
 
-.box{
-    background:white;
-    border:1px solid #999;
-    padding:10px;
-    margin-bottom:14px;
+.track-num {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 7px;
+  color: var(--dk-gray);
+  margin-bottom: 2px;
 }
 
-a{
-    color:#3366cc;
+/* Page header banner */
+.page-banner {
+  background: var(--black);
+  padding: 10px;
+  text-align: center;
 }
-
-.heading{
-    font-weight:bold;
-    color:#ff55aa;
-    font-size:16px;
-    margin-bottom:10px;
+.page-banner-title {
+  font-family: 'VT323', monospace;
+  font-size: 42px;
+  color: var(--pink);
+  letter-spacing: 4px;
+  text-shadow: 2px 2px 0 #880044;
 }
-
-.track{
-    font-weight:bold;
-    color:#ff55aa;
-    margin-bottom:20px;
+.page-banner-sub {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 11px;
+  color: var(--dk-gray);
+  margin-top: 2px;
 }
-
-audio{
-    width:100%;
-}
-
 </style>
 </head>
-
 <body>
 
-<div id="wrap">
-
-<div class="box">
-
-<a href="index.html">< back</a>
-
-<div class="heading">
-music
+<div class="marquee-bar">
+  <span class="marquee-inner">
+    ★ 5UNCAN / MUSIC ★ || finished and unfinished tracks, demos, edits, live recordings || honestly whatever i feel like putting here || ★ 5UNCAN ONLINE ★
+  </span>
 </div>
 
-<p>
-finished and unfinished tracks, demos, edits, live recordings. honestly whatever i feel like putting here.
-</p>
+<div class="desktop">
+  <div class="col-wrap">
 
+    <div class="col-left">
+
+      <!-- PAGE HEADER -->
+      <div class="win">
+        <div class="win-titlebar">
+          <span class="win-title-txt">MUSIC.EXE — track player</span>
+          <div class="win-btns">
+            <div class="win-btn">_</div><div class="win-btn">□</div><div class="win-btn">✕</div>
+          </div>
+        </div>
+        <div class="page-banner">
+          <div class="page-banner-title">MUSIC</div>
+          <div class="page-banner-sub">finished and unfinished tracks, demos, edits, live recordings. honestly whatever i feel like putting here.</div>
+        </div>
+      </div>
+
+      <!-- TRACK LIST WINDOW -->
+      <div class="win">
+        <div class="win-titlebar">
+          <span class="win-title-txt">TRACKS — click to play</span>
+          <div class="win-btns">
+            <div class="win-btn">_</div><div class="win-btn">□</div><div class="win-btn">✕</div>
+          </div>
+        </div>
+        <div class="win-body">
+          <div class="sec-heading">★ ALL TRACKS</div>
+
+          <div class="track-card">
+            <div class="track-num">TRACK 01</div>
+            <div class="track-name">SDIABR.mp3</div>
+            <audio controls><source src="Slow_dancing.mp3" type="audio/mpeg"></audio>
+          </div>
+
+          <div class="track-card">
+            <div class="track-num">TRACK 02</div>
+            <div class="track-name">tswizzle.mp3</div>
+            <audio controls><source src="@5uncan tswizzle.mp3"></audio>
+          </div>
+
+          <div class="track-card">
+            <div class="track-num">TRACK 03</div>
+            <div class="track-name">JaredSample.mp3</div>
+            <audio controls><source src="JaredSample.mp3" type="audio/mpeg"></audio>
+          </div>
+
+          <div class="track-card">
+            <div class="track-num">TRACK 04</div>
+            <div class="track-name">FireEmblem.mp3</div>
+            <audio controls><source src="Fire Emblem thing pitched.mp3"></audio>
+          </div>
+
+          <div class="track-card">
+            <div class="track-num">TRACK 05</div>
+            <div class="track-name">GigaChill.mp3</div>
+            <audio controls><source src="GigaCHill.mp3"></audio>
+          </div>
+
+          <div class="track-card">
+            <div class="track-num">TRACK 06</div>
+            <div class="track-name">gangnamstyle.mp3</div>
+            <audio controls><source src="gangnam2.mp3"></audio>
+          </div>
+
+          <div class="track-card">
+            <div class="track-num">TRACK 07</div>
+            <div class="track-name">bones.mp3</div>
+            <audio controls><source src="bones.mp3" type="audio/mpeg"></audio>
+          </div>
+
+          <div class="track-card">
+            <div class="track-num">TRACK 08</div>
+            <div class="track-name">Biebs.mp3</div>
+            <audio controls><source src="Biebs.mp3"></audio>
+          </div>
+
+          <div class="track-card">
+            <div class="track-num">TRACK 09</div>
+            <div class="track-name">Merry Christmas.mp3</div>
+            <audio controls><source src="Merry Christmas.mp3"></audio>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COL -->
+    <div class="col-right">
+      <div class="win">
+        <div class="win-titlebar">
+          <span class="win-title-txt">NAVIGATE</span>
+          <div class="win-btns"><div class="win-btn">✕</div></div>
+        </div>
+        <div class="win-body" style="padding:4px;">
+          <ul class="nav-list">
+            <li><a href="index.html">home</a></li>
+            <li><a href="music.html" class="active">music</a></li>
+            <li><a href="mixing.html">mixing</a></li>
+            <li><a href="code.html">code</a></li>
+            <li><a href="about.html">about</a></li>
+            <li><a href="log.html">log</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="win">
+        <div class="win-titlebar">
+          <span class="win-title-txt">NOTE.TXT</span>
+          <div class="win-btns"><div class="win-btn">✕</div></div>
+        </div>
+        <div class="win-body">
+          <p style="font-family:'Share Tech Mono',monospace;font-size:11px;line-height:1.6;color:var(--dk-gray);">
+            these are all my tracks. some finished. some not. click play and see what happens.
+          </p>
+        </div>
+      </div>
+
+      <div class="win">
+        <div class="win-titlebar">
+          <span class="win-title-txt">LINKS</span>
+          <div class="win-btns"><div class="win-btn">✕</div></div>
+        </div>
+        <div class="win-body" style="padding:4px;">
+          <ul class="nav-list" style="font-size:17px;">
+            <li><a href="https://soundcloud.com/5uncan" target="_blank">soundcloud</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="site-footer">5uncan.neocities.org</div>
 </div>
 
-<div class="box">
-
-<div class="track">
-SDIABR.mp3
-
-<audio controls>
-<source src="Slow_dancing.mp3" type="audio/mpeg">
-</audio>
+<div class="taskbar">
+  <div class="taskbar-start">⊞ START</div>
+  <div class="taskbar-sep"></div>
+  <div class="taskbar-items">
+    <div class="taskbar-item">♪ MUSIC.EXE</div>
+  </div>
+  <div class="taskbar-clock" id="clock">00:00</div>
 </div>
-
-<div class="track">
-tswizzle.mp3
-
-<audio controls>
-<source src="@5uncan tswizzle.mp3">
-</audio>
-</div>
-
-<div class="track">
-JaredSample.mp3
-
-<audio controls>
-<source src="JaredSample.mp3" type="audio/mpeg">
-</audio>
-</div>
-
-<div class="track">
-FireEmblem.mp3
-
-<audio controls>
-<source src="Fire Emblem thing pitched.mp3">
-</audio>
-</div>
-
-<div class="track">
-GigaChill.mp3
-
-<audio controls>
-<source src="GigaCHill.mp3">
-</audio>
-</div>
-
-<div class="track">
-gangnamstyle.mp3
-
-<audio controls>
-<source src="gangnam2.mp3">
-</audio>
-</div>
-
-<div class="track">
-bones.mp3
-
-<audio controls>
-<source src="bones.mp3" type="audio/mpeg">
-</audio>
-</div>
-
-<div class="track">
-Biebs.mp3
-
-<audio controls>
-<source src="Biebs.mp3">
-</audio>
-</div>
-
-<div class="track">
-Merry Christmas.mp3
-
-<audio controls>
-<source src="Merry Christmas.mp3">
-</audio>
-</div>
-
-
-</div>
-
-</div>
+<script>
+function tick(){const n=new Date();document.getElementById('clock').textContent=String(n.getHours()).padStart(2,'0')+':'+String(n.getMinutes()).padStart(2,'0');}
+tick();setInterval(tick,10000);
+</script>
+</body>
+</html>

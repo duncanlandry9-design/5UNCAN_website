@@ -1,89 +1,254 @@
-<!-- ========================= -->
-<!-- mixing.html -->
-<!-- ========================= -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>mixing</title>
-
+<title>5UNCAN — mixing</title>
+<link rel="stylesheet" href="style.css">
 <style>
+.col-wrap { display: flex; gap: 10px; align-items: flex-start; }
+.col-left  { flex: 1 1 auto; display: flex; flex-direction: column; gap: 10px; }
+.col-right { width: 200px;   display: flex; flex-direction: column; gap: 10px; }
 
-body{
-    background:#f3f3ff;
-    font-family:Tahoma;
-    font-size:12px;
-    color:#222;
-    background-image:url("https://www.transparenttextures.com/patterns/stardust.png");
+.nav-list { list-style: none; }
+.nav-list li { border-bottom: 1px solid var(--dk-gray); }
+.nav-list li:last-child { border-bottom: none; }
+.nav-list a {
+  display: block; padding: 4px 6px;
+  font-family: 'VT323', monospace; font-size: 20px;
+  color: var(--blue); text-decoration: none; letter-spacing: 1px;
+}
+.nav-list a:hover { background: var(--win-title); color: var(--white); }
+.nav-list a::before { content: '▶ '; font-size: 10px; }
+.nav-list a.active { color: var(--pink); }
+
+.page-banner {
+  background: var(--black);
+  padding: 10px;
+  text-align: center;
+}
+.page-banner-title {
+  font-family: 'VT323', monospace;
+  font-size: 42px;
+  color: var(--pink);
+  letter-spacing: 4px;
+  text-shadow: 2px 2px 0 #880044;
+}
+.page-banner-sub {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 11px;
+  color: var(--dk-gray);
+  margin-top: 2px;
 }
 
-#wrap{
-    width:760px;
-    margin:auto;
-    margin-top:20px;
+/* Project cards */
+.project {
+  padding: 12px 0;
+  border-bottom: 1px dotted var(--dk-gray);
+}
+.project:first-child { padding-top: 0; }
+.project:last-child { border-bottom: none; }
+
+.project-num {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 7px;
+  color: var(--dk-gray);
+  margin-bottom: 4px;
 }
 
-.box{
-    background:white;
-    border:1px solid #999;
-    padding:10px;
-    margin-bottom:14px;
+.project-title {
+  font-family: 'VT323', monospace;
+  font-size: 24px;
+  color: var(--pink);
+  letter-spacing: 1px;
 }
 
-.heading{
-    color:#ff55aa;
-    font-weight:bold;
-    font-size:16px;
+.project-tags {
+  display: flex; gap: 4px; flex-wrap: wrap; margin-top: 6px;
+}
+.ptag {
+  font-family: 'VT323', monospace;
+  font-size: 13px;
+  padding: 0 6px;
+  border: 1px solid var(--black);
+  background: var(--win-title);
+  color: var(--lt-blue);
+  letter-spacing: 1px;
 }
 
-.project{
-    margin-top:15px;
-    border-top:1px dotted #ccc;
-    padding-top:15px;
+.project-desc {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 11px;
+  color: var(--dk-gray);
+  margin-top: 4px;
+  line-height: 1.5;
 }
 
-a{
-    color:#3366cc;
+/* Skill meters */
+.skill-row {
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 6px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px;
 }
-
+.skill-label { width: 110px; color: var(--black); }
+.skill-bg { flex: 1; height: 10px; background: var(--dk-gray); border: 1px inset var(--black); }
+.skill-fill { height: 100%; background: var(--win-title); }
 </style>
 </head>
-
 <body>
 
-<div id="wrap">
-
-<div class="box">
-
-<a href="index.html">< back</a>
-
-<div class="heading">
-mixing work
+<div class="marquee-bar">
+  <span class="marquee-inner">
+    ★ 5UNCAN / MIXING ★ || selected projects and mastering work || live drums / tape saturation / stereo imaging / compression || ★ 5UNCAN ONLINE ★
+  </span>
 </div>
 
-<p>
-selected projects and mastering work.
-</p>
+<div class="desktop">
+  <div class="col-wrap">
 
-<div class="project">
-<b>indie rock ep</b><br>
-live drums / tape saturation / vocal cleanup
+    <div class="col-left">
+
+      <!-- PAGE HEADER -->
+      <div class="win">
+        <div class="win-titlebar">
+          <span class="win-title-txt">MIXING.EXE — projects &amp; mastering</span>
+          <div class="win-btns">
+            <div class="win-btn">_</div><div class="win-btn">□</div><div class="win-btn">✕</div>
+          </div>
+        </div>
+        <div class="page-banner">
+          <div class="page-banner-title">MIXING WORK</div>
+          <div class="page-banner-sub">selected projects and mastering work.</div>
+        </div>
+      </div>
+
+      <!-- PROJECTS WINDOW -->
+      <div class="win">
+        <div class="win-titlebar">
+          <span class="win-title-txt">PROJECTS — selected work</span>
+          <div class="win-btns">
+            <div class="win-btn">_</div><div class="win-btn">□</div><div class="win-btn">✕</div>
+          </div>
+        </div>
+        <div class="win-body">
+          <div class="sec-heading">⚙ SELECTED PROJECTS</div>
+
+          <div class="project">
+            <div class="project-num">PROJECT 01</div>
+            <div class="project-title">indie rock ep</div>
+            <div class="project-desc">live drums / tape saturation / vocal cleanup</div>
+            <div class="project-tags">
+              <span class="ptag">LIVE DRUMS</span>
+              <span class="ptag">TAPE SAT</span>
+              <span class="ptag">VOCALS</span>
+            </div>
+          </div>
+
+          <div class="project">
+            <div class="project-num">PROJECT 02</div>
+            <div class="project-title">electronic single</div>
+            <div class="project-desc">mastering / stereo imaging / compression</div>
+            <div class="project-tags">
+              <span class="ptag">MASTERING</span>
+              <span class="ptag">STEREO IMG</span>
+              <span class="ptag">COMPRESSION</span>
+            </div>
+          </div>
+
+          <div class="project">
+            <div class="project-num">PROJECT 03</div>
+            <div class="project-title">live session recording</div>
+            <div class="project-desc">editing and balancing</div>
+            <div class="project-tags">
+              <span class="ptag">EDITING</span>
+              <span class="ptag">BALANCING</span>
+              <span class="ptag">LIVE</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- SKILLS -->
+      <div class="win">
+        <div class="win-titlebar">
+          <span class="win-title-txt">SKILLS.EXE</span>
+          <div class="win-btns"><div class="win-btn">✕</div></div>
+        </div>
+        <div class="win-body">
+          <div class="sec-heading">📊 MIXING SKILLS</div>
+          <div class="skill-row">
+            <span class="skill-label">mixing/balancing</span>
+            <div class="skill-bg"><div class="skill-fill" style="width:82%;"></div></div>
+          </div>
+          <div class="skill-row">
+            <span class="skill-label">mastering</span>
+            <div class="skill-bg"><div class="skill-fill" style="width:70%;"></div></div>
+          </div>
+          <div class="skill-row">
+            <span class="skill-label">compression/eq</span>
+            <div class="skill-bg"><div class="skill-fill" style="width:78%;"></div></div>
+          </div>
+          <div class="skill-row">
+            <span class="skill-label">stereo imaging</span>
+            <div class="skill-bg"><div class="skill-fill" style="width:72%;"></div></div>
+          </div>
+          <div class="skill-row">
+            <span class="skill-label">vocal editing</span>
+            <div class="skill-bg"><div class="skill-fill" style="width:65%;"></div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COL -->
+    <div class="col-right">
+      <div class="win">
+        <div class="win-titlebar">
+          <span class="win-title-txt">NAVIGATE</span>
+          <div class="win-btns"><div class="win-btn">✕</div></div>
+        </div>
+        <div class="win-body" style="padding:4px;">
+          <ul class="nav-list">
+            <li><a href="index.html">home</a></li>
+            <li><a href="music.html">music</a></li>
+            <li><a href="mixing.html" class="active">mixing</a></li>
+            <li><a href="code.html">code</a></li>
+            <li><a href="about.html">about</a></li>
+            <li><a href="log.html">log</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="win">
+        <div class="win-titlebar">
+          <span class="win-title-txt">NOTE.TXT</span>
+          <div class="win-btns"><div class="win-btn">✕</div></div>
+        </div>
+        <div class="win-body">
+          <p style="font-family:'Share Tech Mono',monospace;font-size:11px;line-height:1.6;color:var(--dk-gray);">
+            mixing &amp; mastering work. more projects coming soon.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="site-footer">5uncan.neocities.org</div>
 </div>
 
-<div class="project">
-<b>electronic single</b><br>
-mastering / stereo imaging / compression
+<div class="taskbar">
+  <div class="taskbar-start">⊞ START</div>
+  <div class="taskbar-sep"></div>
+  <div class="taskbar-items">
+    <div class="taskbar-item">🎛 MIXING.EXE</div>
+  </div>
+  <div class="taskbar-clock" id="clock">00:00</div>
 </div>
-
-<div class="project">
-<b>live session recording</b><br>
-editing and balancing
-</div>
-
-</div>
-
-</div>
-
+<script>
+function tick(){const n=new Date();document.getElementById('clock').textContent=String(n.getHours()).padStart(2,'0')+':'+String(n.getMinutes()).padStart(2,'0');}
+tick();setInterval(tick,10000);
+</script>
 </body>
 </html>

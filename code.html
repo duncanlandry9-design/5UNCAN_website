@@ -1,101 +1,219 @@
-<!-- ========================= -->
-<!-- code.html -->
-<!-- ========================= -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>code</title>
-
+<title>5UNCAN — code</title>
+<link rel="stylesheet" href="style.css">
 <style>
+.col-wrap { display: flex; gap: 10px; align-items: flex-start; }
+.col-left  { flex: 1 1 auto; display: flex; flex-direction: column; gap: 10px; }
+.col-right { width: 200px;   display: flex; flex-direction: column; gap: 10px; }
 
-body{
-    background:#f3f3ff;
-    font-family:Tahoma;
-    font-size:12px;
-    background-image:url("https://www.transparenttextures.com/patterns/stardust.png");
+.nav-list { list-style: none; }
+.nav-list li { border-bottom: 1px solid var(--dk-gray); }
+.nav-list li:last-child { border-bottom: none; }
+.nav-list a {
+  display: block; padding: 4px 6px;
+  font-family: 'VT323', monospace; font-size: 20px;
+  color: var(--blue); text-decoration: none; letter-spacing: 1px;
+}
+.nav-list a:hover { background: var(--win-title); color: var(--white); }
+.nav-list a::before { content: '▶ '; font-size: 10px; }
+.nav-list a.active { color: var(--pink); }
+
+.page-banner {
+  background: var(--black); padding: 10px; text-align: center;
+}
+.page-banner-title {
+  font-family: 'VT323', monospace;
+  font-size: 42px; color: var(--pink);
+  letter-spacing: 4px; text-shadow: 2px 2px 0 #880044;
+}
+.page-banner-sub {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 11px; color: var(--dk-gray); margin-top: 2px;
 }
 
-#wrap{
-    width:760px;
-    margin:auto;
-    margin-top:20px;
+.project-card {
+  background: var(--black);
+  border: 1px solid var(--lt-blue);
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.project-card:last-child { margin-bottom: 0; }
+
+.project-title {
+  font-family: 'VT323', monospace;
+  font-size: 24px;
+  color: #aaffdd;
+  letter-spacing: 1px;
 }
 
-.box{
-    background:white;
-    border:1px solid #999;
-    padding:10px;
-    margin-bottom:14px;
+.project-desc {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px;
+  color: var(--gray);
+  margin: 4px 0;
+  line-height: 1.5;
 }
 
-.heading{
-    font-size:16px;
-    color:#ff55aa;
-    font-weight:bold;
+.project-tags { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 6px; }
+.ptag {
+  font-family: 'VT323', monospace;
+  font-size: 13px;
+  padding: 0 6px;
+  border: 1px solid var(--lt-blue);
+  background: var(--win-title);
+  color: var(--lt-blue);
+  letter-spacing: 1px;
 }
 
-.project{
-    margin-top:15px;
+.project-link {
+  font-family: 'VT323', monospace;
+  font-size: 16px;
+  color: var(--lt-blue);
+  text-decoration: underline;
 }
+.project-link:hover { color: var(--pink); }
 
-img{
-    width:100%;
-    border:1px solid #ccc;
-    margin-bottom:8px;
+.project-img {
+  width: 100%;
+  border: 1px solid var(--dk-gray);
+  margin-bottom: 8px;
+  display: block;
 }
-
-a{
-    color:#3366cc;
-}
-
 </style>
 </head>
-
 <body>
 
-<div id="wrap">
-
-<div class="box">
-
-<a href="index.html">< back</a>
-
-<div class="heading">
-coding projects
+<div class="marquee-bar">
+  <span class="marquee-inner">
+    ★ 5UNCAN / CODE ★ || rhythm game prototype . audio visualizer . more coming soon || made in godot / web audio api || ★ 5UNCAN ONLINE ★
+  </span>
 </div>
 
-<div class="project">
+<div class="desktop">
+  <div class="col-wrap">
 
-<img src="https://placehold.co/700x250/eeeeff/444444?text=game+prototype">
+    <div class="col-left">
 
-<b>rhythm game prototype</b>
+      <div class="win">
+        <div class="win-titlebar">
+          <span class="win-title-txt">CODE.EXE — coding projects</span>
+          <div class="win-btns">
+            <div class="win-btn">_</div><div class="win-btn">□</div><div class="win-btn">✕</div>
+          </div>
+        </div>
+        <div class="page-banner">
+          <div class="page-banner-title">CODING PROJECTS</div>
+          <div class="page-banner-sub">things i've built. more coming.</div>
+        </div>
+      </div>
 
-<p>
-made in godot with custom timing systems.
-</p>
+      <div class="win">
+        <div class="win-titlebar">
+          <span class="win-title-txt">PROJECTS — source files</span>
+          <div class="win-btns">
+            <div class="win-btn">_</div><div class="win-btn">□</div><div class="win-btn">✕</div>
+          </div>
+        </div>
+        <div class="win-body">
+          <div class="sec-heading">⚙ PROJECTS</div>
 
-<a href="#">github</a>
+          <div class="project-card">
+            <img class="project-img" src="https://placehold.co/700x250/000033/aaaaff?text=RHYTHM+GAME+PROTOTYPE" alt="rhythm game prototype">
+            <div class="project-title">rhythm game prototype</div>
+            <div class="project-desc">made in godot with custom timing systems.</div>
+            <div class="project-tags">
+              <span class="ptag">GODOT</span>
+              <span class="ptag">GDSCRIPT</span>
+              <span class="ptag">GAME DEV</span>
+            </div>
+            <br>
+            <a href="#" class="project-link">[ github →  ]</a>
+          </div>
 
+          <div class="project-card">
+            <img class="project-img" src="https://placehold.co/700x250/000020/ff55aa?text=AUDIO+VISUALIZER" alt="audio visualizer">
+            <div class="project-title">audio visualizer</div>
+            <div class="project-desc">web audio api experiment.</div>
+            <div class="project-tags">
+              <span class="ptag">JS</span>
+              <span class="ptag">WEB AUDIO API</span>
+              <span class="ptag">CANVAS</span>
+            </div>
+            <br>
+            <a href="#" class="project-link">[ view →  ]</a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-right">
+      <div class="win">
+        <div class="win-titlebar">
+          <span class="win-title-txt">NAVIGATE</span>
+          <div class="win-btns"><div class="win-btn">✕</div></div>
+        </div>
+        <div class="win-body" style="padding:4px;">
+          <ul class="nav-list">
+            <li><a href="index.html">home</a></li>
+            <li><a href="music.html">music</a></li>
+            <li><a href="mixing.html">mixing</a></li>
+            <li><a href="code.html" class="active">code</a></li>
+            <li><a href="about.html">about</a></li>
+            <li><a href="log.html">log</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="win">
+        <div class="win-titlebar">
+          <span class="win-title-txt">STACK.TXT</span>
+          <div class="win-btns"><div class="win-btn">✕</div></div>
+        </div>
+        <div class="win-body">
+          <p style="font-family:'Share Tech Mono',monospace;font-size:11px;line-height:1.8;color:var(--dk-gray);">
+            tools i use:<br>
+            — godot<br>
+            — javascript<br>
+            — python<br>
+            — html / css<br>
+            — web audio api
+          </p>
+        </div>
+      </div>
+
+      <div class="win">
+        <div class="win-titlebar">
+          <span class="win-title-txt">LINKS</span>
+          <div class="win-btns"><div class="win-btn">✕</div></div>
+        </div>
+        <div class="win-body" style="padding:4px;">
+          <ul class="nav-list" style="font-size:17px;">
+            <li><a href="https://github.com/duncanlandry9-design" target="_blank">github</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="site-footer">5uncan.neocities.org</div>
 </div>
 
-<div class="project">
-
-<img src="https://placehold.co/700x250/f6f6ff/444444?text=visualizer">
-
-<b>audio visualizer</b>
-
-<p>
-web audio api experiment.
-</p>
-
-<a href="#">view</a>
-
+<div class="taskbar">
+  <div class="taskbar-start">⊞ START</div>
+  <div class="taskbar-sep"></div>
+  <div class="taskbar-items">
+    <div class="taskbar-item">⚙ CODE.EXE</div>
+  </div>
+  <div class="taskbar-clock" id="clock">00:00</div>
 </div>
-
-</div>
-
-</div>
-
+<script>
+function tick(){const n=new Date();document.getElementById('clock').textContent=String(n.getHours()).padStart(2,'0')+':'+String(n.getMinutes()).padStart(2,'0');}
+tick();setInterval(tick,10000);
+</script>
 </body>
 </html>
