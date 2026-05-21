@@ -2,248 +2,150 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>5UNCAN — log</title>
-<link rel="stylesheet" href="style.css">
+<title>log</title>
+
 <style>
-.col-wrap { display: flex; gap: 10px; align-items: flex-start; }
-.col-left  { flex: 1 1 auto; display: flex; flex-direction: column; gap: 10px; }
-.col-right { width: 200px;   display: flex; flex-direction: column; gap: 10px; }
-
-.nav-list { list-style: none; }
-.nav-list li { border-bottom: 1px solid var(--dk-gray); }
-.nav-list li:last-child { border-bottom: none; }
-.nav-list a {
-  display: block; padding: 4px 6px;
-  font-family: 'VT323', monospace; font-size: 20px;
-  color: var(--blue); text-decoration: none; letter-spacing: 1px;
-}
-.nav-list a:hover { background: var(--win-title); color: var(--white); }
-.nav-list a::before { content: '▶ '; font-size: 10px; }
-.nav-list a.active { color: var(--pink); }
-
-.page-banner {
-  background: var(--black); padding: 10px; text-align: center;
-}
-.page-banner-title {
-  font-family: 'VT323', monospace; font-size: 42px; color: var(--pink);
-  letter-spacing: 4px; text-shadow: 2px 2px 0 #880044;
+body{
+    background:#f3f3ff;
+    font-family:Tahoma;
+    font-size:12px;
+    background-image:url("https://www.transparenttextures.com/patterns/stardust.png");
 }
 
-/* Tag nav */
+#wrap{
+    width:760px;
+    margin:auto;
+    margin-top:20px;
+}
+
+.box{
+    background:white;
+    border:1px solid #999;
+    padding:10px;
+    margin-bottom: 14px;
+}
+
+.heading{
+    font-weight:bold;
+    color:#ff55aa;
+    font-size:16px;
+    margin-bottom: 10px;
+}
+
+a{
+    color:#3366cc;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* Tag Navigation Styles */
 #tag-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-  margin-bottom: 12px;
-  padding-bottom: 10px;
-  border-bottom: 1px dotted var(--dk-gray);
+    text-align: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #ccc;
+}
+.tag-link { 
+    margin: 0 5px; 
+    cursor: pointer; 
+    color: #3366cc; 
+}
+.tag-link.active { 
+    font-weight: bold; 
+    color: #ff55aa; 
 }
 
-.tag-btn {
-  font-family: 'VT323', monospace;
-  font-size: 16px;
-  padding: 1px 8px;
-  border: 1px solid var(--dk-gray);
-  background: var(--win-bg);
-  color: var(--blue);
-  cursor: pointer;
-  letter-spacing: 1px;
-  box-shadow: inset -1px -1px var(--dk-gray), inset 1px 1px var(--white);
-}
-
-.tag-btn:hover, .tag-btn.active {
-  background: var(--win-title);
-  color: var(--white);
-  border-color: var(--win-title);
-}
-
-/* Post cards */
-.post {
-  padding: 10px 0;
-  border-bottom: 1px dotted var(--dk-gray);
+/* Post Styles */
+.post { 
+    margin-bottom: 15px; 
+    border-bottom: 1px solid #eee; 
+    padding-bottom: 10px; 
 }
 .post:last-child { border-bottom: none; }
-
-.post-title {
-  font-family: 'VT323', monospace;
-  font-size: 24px;
-  color: var(--pink);
-  letter-spacing: 1px;
-}
-
-.post-date {
-  font-family: 'Press Start 2P', monospace;
-  font-size: 7px;
-  color: var(--dk-gray);
-  margin-bottom: 6px;
-  margin-top: 2px;
-}
-
-.post-content {
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 11px;
-  line-height: 1.7;
-  color: var(--black);
-}
-
-.post-tags {
-  margin-top: 6px;
-  display: flex; gap: 4px; flex-wrap: wrap;
-}
-
-.post-tag {
-  font-family: 'VT323', monospace;
-  font-size: 14px;
-  padding: 0 6px;
-  background: var(--gray);
-  border: 1px solid var(--dk-gray);
-  color: var(--blue);
-  cursor: pointer;
-}
-.post-tag:hover { background: var(--win-title); color: var(--white); }
+.post-title { font-weight: bold; font-size: 14px; color:#ff55aa; }
+.post-date { color: #888; font-size: 10px; margin-bottom: 5px; }
+.post-tags { color: #ff55aa; font-size: 10px; margin-top: 5px;}
 </style>
 </head>
+
 <body>
 
-<div class="marquee-bar">
-  <span class="marquee-inner">
-    ★ 5UNCAN / LOG ★ || pokemon champions is cooked || my new website (T__T) || gaming . update . code . website || ★ 5UNCAN ONLINE ★
-  </span>
-</div>
+<div id="wrap">
+    <div class="box">
+        <a href="index.html">< back</a>
+        <div class="heading">log</div>
 
-<div class="desktop">
-  <div class="col-wrap">
+        <div id="tag-nav"></div>
 
-    <div class="col-left">
-
-      <div class="win">
-        <div class="win-titlebar">
-          <span class="win-title-txt">LOG.EXE — personal log</span>
-          <div class="win-btns">
-            <div class="win-btn">_</div><div class="win-btn">□</div><div class="win-btn">✕</div>
-          </div>
-        </div>
-        <div class="page-banner">
-          <div class="page-banner-title">LOG</div>
-        </div>
-      </div>
-
-      <div class="win">
-        <div class="win-titlebar">
-          <span class="win-title-txt">POSTS — filtered by tag</span>
-          <div class="win-btns">
-            <div class="win-btn">_</div><div class="win-btn">□</div><div class="win-btn">✕</div>
-          </div>
-        </div>
-        <div class="win-body">
-          <div class="sec-heading">📋 RECENT POSTS</div>
-          <div id="tag-nav"></div>
-          <div id="posts-container"></div>
-        </div>
-      </div>
-
+        <div id="posts-container"></div>
     </div>
-
-    <div class="col-right">
-      <div class="win">
-        <div class="win-titlebar">
-          <span class="win-title-txt">NAVIGATE</span>
-          <div class="win-btns"><div class="win-btn">✕</div></div>
-        </div>
-        <div class="win-body" style="padding:4px;">
-          <ul class="nav-list">
-            <li><a href="index.html">home</a></li>
-            <li><a href="music.html">music</a></li>
-            <li><a href="mixing.html">mixing</a></li>
-            <li><a href="code.html">code</a></li>
-            <li><a href="about.html">about</a></li>
-            <li><a href="log.html" class="active">log</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="win">
-        <div class="win-titlebar">
-          <span class="win-title-txt">ARCHIVE</span>
-          <div class="win-btns"><div class="win-btn">✕</div></div>
-        </div>
-        <div class="win-body">
-          <p style="font-family:'VT323',monospace;font-size:17px;color:var(--dk-gray);">
-            may 2026<br>
-            <span style="font-size:13px;font-family:'Share Tech Mono',monospace;color:var(--dk-gray);">2 posts</span>
-          </p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-  <div class="site-footer">5uncan.neocities.org</div>
-</div>
-
-<div class="taskbar">
-  <div class="taskbar-start">⊞ START</div>
-  <div class="taskbar-sep"></div>
-  <div class="taskbar-items">
-    <div class="taskbar-item">📋 LOG.EXE</div>
-  </div>
-  <div class="taskbar-clock" id="clock">00:00</div>
 </div>
 
 <script>
-function tick(){const n=new Date();document.getElementById('clock').textContent=String(n.getHours()).padStart(2,'0')+':'+String(n.getMinutes()).padStart(2,'0');}
-tick();setInterval(tick,10000);
+    // YOUR POSTS DATABASE
+    // To add a new post, copy an existing block {} and paste it at the TOP of this list.
+    const posts = [
+        { 
+            title: "pokemon champions is cooked", 
+            content: "my golurk team is cooked, I cant figure out how to make it more viable, currently running trick room with farig and incin, switching into M golurk or torkoal. I also bring sinistcha or conkeldur if theres like milotic or garchomp. Need to find something stronger for milotic though as I just cannot kill it. I might make a paste for my team but idk. also work got me learning things I dont know how to do and need to do immediately (T__T)", 
+            tags: ["gaming", "pokemon", "videogames"], 
+            date: "5/20/2026" 
+        },
+        { 
+            title: "my new website (T__T)", 
+            content: "first time using css and html, I am losing my mind learning all this. Went pretty simple for my first site, hopefully I can continue adding onto this.", 
+            tags: ["update", "code","website"], 
+            date: "5/19/2026" 
+        }
+    ];
 
-// ── YOUR POSTS ──────────────────────────────────
-const posts = [
-  {
-    title: "pokemon champions is cooked",
-    content: "my golurk team is cooked, I cant figure out how to make it more viable, currently running trick room with farig and incin, switching into M golurk or torkoal. I also bring sinistcha or conkeldur if theres like milotic or garchomp. Need to find something stronger for milotic though as I just cannot kill it. I might make a paste for my team but idk. also work got me learning things I dont know how to do and need to do immediately (T__T)",
-    tags: ["gaming", "pokemon", "videogames"],
-    date: "5/20/2026"
-  },
-  {
-    title: "my new website (T__T)",
-    content: "first time using css and html, I am losing my mind learning all this. Went pretty simple for my first site, hopefully I can continue adding onto this.",
-    tags: ["update", "code", "website"],
-    date: "5/19/2026"
-  }
-];
-// ────────────────────────────────────────────────
+    // DO NOT EDIT BELOW THIS LINE
+    function renderPosts(filterTag = 'all') {
+        const container = document.getElementById('posts-container');
+        const tagNav = document.getElementById('tag-nav');
+        container.innerHTML = '';
 
-function renderPosts(filterTag = 'all') {
-  const container = document.getElementById('posts-container');
-  const tagNav = document.getElementById('tag-nav');
+        // Filter posts
+        let filteredPosts = posts;
+        if (filterTag !== 'all') {
+            filteredPosts = filteredPosts.filter(p => p.tags.includes(filterTag));
+        }
+        
+        // Limit to 5 most recent
+        filteredPosts = filteredPosts.slice(0, 5);
 
-  let filtered = filterTag === 'all' ? posts : posts.filter(p => p.tags.includes(filterTag));
-  filtered = filtered.slice(0, 5);
+        // Display Posts
+        if(filteredPosts.length === 0) {
+            container.innerHTML = '<p>No posts found.</p>';
+        } else {
+            filteredPosts.forEach(post => {
+                container.innerHTML += `
+                    <div class="post">
+                        <div class="post-title">${post.title}</div>
+                        <div class="post-date">${post.date}</div>
+                        <div>${post.content}</div>
+                        <div class="post-tags">tags: ${post.tags.join(', ')}</div>
+                    </div>
+                `;
+            });
+        }
 
-  if (filtered.length === 0) {
-    container.innerHTML = '<p style="font-family:\'Share Tech Mono\',monospace;font-size:11px;color:var(--dk-gray);">no posts found.</p>';
-  } else {
-    container.innerHTML = filtered.map(post => `
-      <div class="post">
-        <div class="post-title">${post.title}</div>
-        <div class="post-date">${post.date}</div>
-        <div class="post-content">${post.content}</div>
-        <div class="post-tags">
-          ${post.tags.map(t => `<span class="post-tag" onclick="renderPosts('${t}')">${t}</span>`).join('')}
-        </div>
-      </div>
-    `).join('');
-  }
+        // Build Tag Navigation
+        let allTags = new Set();
+        posts.forEach(p => p.tags.forEach(t => allTags.add(t.trim().toLowerCase())));
 
-  // Build tag nav
-  const allTags = new Set();
-  posts.forEach(p => p.tags.forEach(t => allTags.add(t.trim().toLowerCase())));
+        let navHTML = `<span class="tag-link ${filterTag === 'all' ? 'active' : ''}" onclick="renderPosts('all')">all</span>`;
+        allTags.forEach(tag => {
+            if(tag) {
+                navHTML += ` | <span class="tag-link ${filterTag === tag ? 'active' : ''}" onclick="renderPosts('${tag}')">${tag}</span>`;
+            }
+        });
+        tagNav.innerHTML = navHTML;
+    }
 
-  let navHTML = `<button class="tag-btn ${filterTag==='all'?'active':''}" onclick="renderPosts('all')">all</button>`;
-  allTags.forEach(tag => {
-    if (tag) navHTML += `<button class="tag-btn ${filterTag===tag?'active':''}" onclick="renderPosts('${tag}')">${tag}</button>`;
-  });
-  tagNav.innerHTML = navHTML;
-}
-
-renderPosts();
+    renderPosts();
 </script>
 </body>
 </html>
