@@ -1,13 +1,209 @@
+<!-- ========================= -->
+<!-- not_found.html -->
+<!-- ========================= -->
+
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Not Found</title>
-    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
-  </head>
-  <body>
-    <h1>Page Not Found</h1>
-    <p>The requested page was not found.</p>
-  </body>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>404 - not found</title>
+
+<style>
+
+body{
+    background:#f3f3ff;
+    font-family:Tahoma, Arial, sans-serif;
+    font-size:12px;
+    color:#222;
+    margin:0;
+    background-image:url("https://www.transparenttextures.com/patterns/stardust.png");
+}
+
+#wrap{
+    width:760px;
+    margin:auto;
+    margin-top:20px;
+    margin-bottom:40px;
+}
+
+.box{
+    background:white;
+    border:1px solid #999;
+    padding:10px;
+    margin-bottom:14px;
+}
+
+.heading{
+    font-weight:bold;
+    color:#ff55aa;
+    font-size:16px;
+    margin-bottom:8px;
+}
+
+a{
+    color:#3366cc;
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+#nav{
+    margin-top:8px;
+    padding-top:8px;
+    border-top:1px solid #ddd;
+}
+
+#nav a{
+    color:#3366cc;
+    margin-right:14px;
+    text-decoration:none;
+}
+
+#nav a:hover{
+    text-decoration:underline;
+}
+
+#title{
+    font-size:32px;
+    font-weight:bold;
+    letter-spacing:-2px;
+    color:#ff55aa;
+}
+
+#subtitle{
+    color:#666;
+    margin-top:4px;
+}
+
+#error-box{
+    text-align:center;
+    padding:18px 0 14px 0;
+    border:2px solid #c0c0c0;
+    background:#f3f3ff;
+    margin-bottom:12px;
+    box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #888;
+    position:relative;
+}
+
+#error-box::before{
+    content:"";
+    display:block;
+    position:absolute;
+    top:0; left:0; right:0; bottom:0;
+    background:repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0,0,0,0.03) 2px,
+        rgba(0,0,0,0.03) 4px
+    );
+    pointer-events:none;
+}
+
+#error-code{
+    font-size:80px;
+    font-weight:bold;
+    color:#ff55aa;
+    letter-spacing:-4px;
+    line-height:1;
+    margin-bottom:6px;
+    font-family:"Courier New", monospace;
+    text-shadow:
+        2px 2px 0 #c03080,
+        -1px 0 2px rgba(180,0,100,0.3);
+    animation: flicker 3s infinite;
+    display:inline-block;
+}
+
+#error-label{
+    font-size:13px;
+    font-weight:bold;
+    color:#ff55aa;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    font-family:"Courier New", monospace;
+    animation: flicker2 3s infinite;
+}
+
+@keyframes flicker {
+    0%   { opacity:1; }
+    2%   { opacity:0.7; }
+    4%   { opacity:1; }
+    30%  { opacity:1; }
+    31%  { opacity:0.4; }
+    32%  { opacity:1; }
+    60%  { opacity:1; }
+    61%  { opacity:0.85; }
+    62%  { opacity:1; }
+    80%  { opacity:1; }
+    81%  { opacity:0.3; }
+    82%  { opacity:1; }
+    83%  { opacity:0.9; }
+    84%  { opacity:1; }
+    100% { opacity:1; }
+}
+
+@keyframes flicker2 {
+    0%   { opacity:1; }
+    31%  { opacity:1; }
+    32%  { opacity:0.5; }
+    33%  { opacity:1; }
+    81%  { opacity:1; }
+    82%  { opacity:0.2; }
+    83%  { opacity:1; }
+    100% { opacity:1; }
+}
+
+#footer{
+    text-align:center;
+    color:#888;
+    margin-top:20px;
+    font-size:11px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="wrap">
+
+<div class="box">
+
+<div id="title">5UNCAN online</div>
+<div id="subtitle">music / mixing / code / internet stuff</div>
+
+<div id="nav">
+    <a href="index.html">home</a>
+    <a href="music.html">music</a>
+    <a href="mixing.html">mixing</a>
+    <a href="code.html">code</a>
+    <a href="about.html">about</a>
+    <a href="log.html">log</a>
+</div>
+
+</div>
+
+<div class="box">
+
+<div id="error-box">
+    <div id="error-code">404</div>
+    <div id="error-label">page not found</div>
+</div>
+
+<p style="text-align:center; margin:10px 0 6px 0;">whatever you were looking for isn't here. might have never existed, might have moved. either way (T__T)</p>
+
+<p style="text-align:center; margin:0;"><a href="index.html">< back to home</a></p>
+
+</div>
+
+<div id="footer">
+best viewed on desktop
+</div>
+
+</div>
+
+</body>
 </html>
