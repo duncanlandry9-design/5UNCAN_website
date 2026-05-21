@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>log</title>
+
+<style>
+body{
+    background:#f3f3ff;
+    font-family:Tahoma;
+    font-size:12px;
+    background-image:url("https://www.transparenttextures.com/patterns/stardust.png");
+}
+
+#wrap{
+    width:760px;
+    margin:auto;
+    margin-top:20px;
+}
+
+.box{
+    background:white;
+    border:1px solid #999;
+    padding:10px;
+    margin-bottom: 14px;
+}
+
+.heading{
+    font-weight:bold;
+    color:#ff55aa;
+    font-size:16px;
+    margin-bottom: 10px;
+}
+
+a{
+    color:#3366cc;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* Tag Navigation Styles */
+#tag-nav {
+    text-align: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #ccc;
+}
+.tag-link { 
+    margin: 0 5px; 
+    cursor: pointer; 
+    color: #3366cc; 
+}
+.tag-link.active { 
+    font-weight: bold; 
+    color: #ff55aa; 
+}
+
+/* Post Styles */
+.post { 
+    margin-bottom: 15px; 
+    border-bottom: 1px solid #eee; 
+    padding-bottom: 10px; 
+}
+.post:last-child { border-bottom: none; }
+.post-title { font-weight: bold; font-size: 14px; color:#ff55aa; }
+.post-date { color: #888; font-size: 10px; margin-bottom: 5px; }
+.post-tags { color: #ff55aa; font-size: 10px; margin-top: 5px;}
+</style>
+</head>
+
+<body>
+
+<div id="wrap">
+    <div class="box">
+        <a href="index.html">< back</a>
+        <div class="heading">log</div>
+
+        <div id="tag-nav"></div>
+
+        <div id="posts-container"></div>
+    </div>
+</div>
+
+<script>
+    // YOUR POSTS DATABASE
+    // To add a new post, copy an existing block {} and paste it at the TOP of this list.
+    const posts = [
+        { 
+            title: "pokemon champions got me fucked up", 
+            content: "my golurk team is cooked, I cant figure out how to make it more viable, currently running trick room with farig and incin, switching into M golurk or torkoal. I also bring sinistcha or conkeldur if theres like milotic or garchomp. Need to find something stronger for milotic though as I just cannot kill it. I might make a paste for my team but idk. also work got me learning things I dont know how to do and need to do immediately (T__T)", 
+            tags: ["gaming", "pokemon", "videogames"], 
+            date: "5/20/2026" 
+        },
+        { 
+            title: "my new website (T__T)", 
+            content: "first time using css and html, I am losing my mind learning all this. Went pretty simple for my first site, hopefully I can continue adding onto this.", 
+            tags: ["update", "code","website"], 
+            date: "5/19/2026" 
+        }
+    ];
+
+    // DO NOT EDIT BELOW THIS LINE
+    function renderPosts(filterTag = 'all') {
+        const container = document.getElementById('posts-container');
+        const tagNav = document.getElementById('tag-nav');
+        container.innerHTML = '';
+
+        // Filter posts
+        let filteredPosts = posts;
+        if (filterTag !== 'all') {
+            filteredPosts = filteredPosts.filter(p => p.tags.includes(filterTag));
+        }
+        
+        // Limit to 5 most recent
+        filteredPosts = filteredPosts.slice(0, 5);
+
+        // Display Posts
+        if(filteredPosts.length === 0) {
+            container.innerHTML = '<p>No posts found.</p>';
+        } else {
+            filteredPosts.forEach(post => {
+                container.innerHTML += `
+                    <div class="post">
+                        <div class="post-title">${post.title}</div>
+                        <div class="post-date">${post.date}</div>
+                        <div>${post.content}</div>
+                        <div class="post-tags">tags: ${post.tags.join(', ')}</div>
+                    </div>
+                `;
+            });
+        }
+
+        // Build Tag Navigation
+        let allTags = new Set();
+        posts.forEach(p => p.tags.forEach(t => allTags.add(t.trim().toLowerCase())));
+
+        let navHTML = `<span class="tag-link ${filterTag === 'all' ? 'active' : ''}" onclick="renderPosts('all')">all</span>`;
+        allTags.forEach(tag => {
+            if(tag) {
+                navHTML += ` | <span class="tag-link ${filterTag === tag ? 'active' : ''}" onclick="renderPosts('${tag}')">${tag}</span>`;
+            }
+        });
+        tagNav.innerHTML = navHTML;
+    }
+
+    renderPosts();
+</script>
+</body>
+</html>
