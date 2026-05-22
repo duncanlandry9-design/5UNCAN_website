@@ -94,7 +94,7 @@ img{
 marquee{
     color:#777;
 }
- /* TIGHT CONTAINER: Height reduced from 700px to 410px */
+
         .cube-wrapper {
             display: grid;
             place-items: center;       
@@ -188,7 +188,6 @@ welcome
         window.addEventListener('mouseleave', () => { isDragging = false; });
 
         function render() {
-            // CROPPED RESOLUTION: Width reduced from 110 to 86, Height from 55 to 44
             const width = 86, height = 44;
             
             let buffer = Array(width * height).fill(' ');
@@ -236,7 +235,6 @@ welcome
             let distanceZ = z2 + 5; 
             let ooz = 1 / distanceZ; 
 
-            // RETAINED PROJECTION SCALE: Keeps the cube large while centering it in a tighter array box
             let xp = Math.floor(w / 2 + 65 * ooz * x1); 
             let yp = Math.floor(h / 2 + 33 * ooz * y2); 
 
